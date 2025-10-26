@@ -20,22 +20,24 @@ body {
 
 .card {
   display: flex;
-  position: relative;         /* needed for desktop absolute social links */
+  position: relative;         
   background-color: #fff;
   border-radius: 80px;
   max-width: 1200px;
   width: 90%;
   padding: 25px;
   align-items: center;
-  /* gap: 10px; */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
+              -2px -2px 5px rgba(255, 255, 255, 0.7);
+
 }
 
-/* === Flex Order: App Links | Photo | Info === */
+
 .social-links { order: 1; }
 .profile-photo { order: 2; }
 .profile-info { order: 3; }
 
-/* === Profile Photo === */
+
 .profile-photo {
   flex: 0 0 auto;
   display: flex;
@@ -52,13 +54,13 @@ body {
   border: 2px solid #ccc;
 }
 
-/* === Profile Info === */
+
 .profile-info {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical center */
+  justify-content: center; 
   margin-left: 20px;
-  flex: 1; /* take remaining horizontal space */
+  flex: 1; 
 }
 
 .profile-info h1 {
