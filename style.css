@@ -1,25 +1,208 @@
+/* === Basic Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Segoe UI", sans-serif;
-  text-align: center;
-  margin-top: 100px;
-  background-color: #fafafa;
-  transition: background 0.5s ease;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
 }
 
-h1 {
-  color: #007acc;
+/* === Top Card Section === */
+.top-card {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #007acc;
-  color: white;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
+.card {
+  display: flex;
+  position: relative;         /* needed for desktop absolute social links */
+  background-color: #fff;
+  border-radius: 80px;
+  max-width: 1200px;
+  width: 90%;
+  padding: 25px;
+  align-items: center;
+  /* gap: 10px; */
 }
 
-button:hover {
-  background-color: #005f99;
+/* === Flex Order: App Links | Photo | Info === */
+.social-links { order: 1; }
+.profile-photo { order: 2; }
+.profile-info { order: 3; }
+
+/* === Profile Photo === */
+.profile-photo {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 70px;
+}
+
+.profile-photo img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+/* === Profile Info === */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  margin-left: 20px;
+  flex: 1; /* take remaining horizontal space */
+}
+
+.profile-info h1 {
+  font-size: 3.5rem;
+  color: #444;
+}
+
+
+.profile-info .title {
+  font-size: 1.4rem;   /* large screen size */
+  color: #666;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+.social-links {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* spread icons vertically */
+  align-items: flex-start;       /* left-aligned baseline */
+  height: 90%;                  /* fill card height */
+  transform: translateY(-50%);
+}
+
+.social-links a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+              inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+@media (min-width: 701px) {
+  .social-links a:nth-child(1) { margin-left: 25px; } /* top right */
+  .social-links a:nth-child(2) { margin-left: 0; }   /* middle left */
+  .social-links a:nth-child(3) { margin-left: 25px; } /* bottom right */
+}
+.social-links a:hover {
+  transform: scale(1.2);
+  background-color: #d0d0d0;
+}
+
+.social-links a img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* === Responsive: Tablet / Small Screens (<700px) === */
+@media (max-width: 700px) {
+  .card {
+    flex-direction: column;        
+    align-items: center;           
+    padding: 20px;
+  }
+
+  .profile-photo {
+    margin-bottom: 15px;  
+    margin-left: 0;         
+    flex: 0 0 auto;                
+  }
+  
+  .profile-info h1 {
+    font-size: 2.4rem;
+  }
+
+  .profile-info .title {
+    font-size: 1.1rem; /* mid-size for tablets */
+  }
+
+  .profile-info {
+    margin-left: 0;                
+    text-align: center;           
+    margin-bottom: 10px;           
+  }
+
+
+  .social-links {
+    order: 4;
+    position: static;             /* normal flow under title */
+    flex-direction: row;          /* horizontal row */
+    justify-content: center;      /* center horizontally */
+    align-items: center;          /* vertical center */
+    transform: none;              /* remove desktop translateY */
+    margin-top: 0px;
+    gap: 20px;
+  }
+
+  .social-links a {
+    margin-left: 0 !important;    /* reset any desktop offsets */
+  }
+}
+
+/* === Responsive: Extra Small Screens (<400px) === */
+@media (max-width: 400px) {
+  .profile-photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .profile-info .title {
+    font-size: 0.95rem;
+  }
+
+  .social-links {
+    gap: 5px; /* smaller spacing between icons */
+  }
+
+  .social-links a {
+    width: 35px;
+    height: 35px;
+  }
+
+  .social-links a img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* === About Section === */
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+section#about h2 {
+  color: #444;
+  margin-bottom: 8px;
+}
+
+section#about p {
+  color: #555;
+  line-height: 1.6;
 }
