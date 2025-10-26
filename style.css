@@ -208,3 +208,123 @@ section#about p {
   color: #555;
   line-height: 1.6;
 }
+
+
+/* ________________________ */
+
+
+/* === Timeline Layout === */
+.timeline-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Vertical Line */
+.timeline {
+  position: relative;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #ccc;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Timeline Dots */
+.timeline-item {
+  position: relative;
+  z-index: 2;
+  margin: 30px 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.timeline-item:hover {
+  transform: scale(1.1);
+}
+
+.timeline-item .dot {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.15),
+              inset -1px -1px 3px rgba(255,255,255,0.8);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.timeline-item.active .dot {
+  background-color: #444;
+  transform: scale(1.2);
+}
+
+/* Timeline Content */
+.timeline-content {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+
+.timeline-content h2 {
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* === Responsive === */
+@media (max-width: 700px) {
+  .timeline-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline {
+    flex-direction: row;
+    width: auto;
+    height: 80px;
+  }
+
+  .timeline-line {
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .timeline-item {
+    margin: 0 20px;
+  }
+
+  .timeline-content {
+    margin-top: 30px;
+  }
+}
