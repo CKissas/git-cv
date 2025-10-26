@@ -32,57 +32,44 @@
 
 
   <main>
-    <section id="about">
+    <!-- <section id="about">
       <h2>About Me</h2>
       <p>Hello World!</p>
-    </section>
+    </section> -->
 
     <section class="timeline-section">
-  <div class="timeline">
-    <div class="timeline-line"></div>
-
-    <div class="timeline-item active" data-section="about">
-      <span class="dot"></span>
-    </div>
-
-    <div class="timeline-item" data-section="experience">
-      <span class="dot"></span>
-    </div>
-
-    <div class="timeline-item" data-section="projects">
-      <span class="dot"></span>
-    </div>
-
-    <div class="timeline-item" data-section="contact">
-      <span class="dot"></span>
-    </div>
+  <!-- Labels -->
+  <div class="timeline-labels">
+    <div class="timeline-label">About</div>
+    <div class="timeline-label">Experience</div>
+    <div class="timeline-label">Projects</div>
+    <div class="timeline-label">Contact</div>
   </div>
 
+  <!-- Line + Dots -->
+  <div class="timeline-line-container">
+    <div class="timeline-line"></div>
+    <div class="timeline-dot" data-section="about"></div>
+    <div class="timeline-dot" data-section="experience"></div>
+    <div class="timeline-dot" data-section="projects"></div>
+    <div class="timeline-dot" data-section="contact"></div>
+  </div>
+
+  <!-- Content -->
   <div class="timeline-content">
-    <div id="about" class="content-section active">
-      <h2>About Me</h2>
-      <p>I'm a passionate Application Engineer with a love for clean code and user-focused design.</p>
-    </div>
-
-    <div id="experience" class="content-section">
-      <h2>Experience</h2>
-      <p>5+ years of experience developing web and mobile applications.</p>
-    </div>
-
-    <div id="projects" class="content-section">
-      <h2>Projects</h2>
-      <p>Explore my projects on GitHub — each designed with usability and performance in mind.</p>
-    </div>
-
-    <div id="contact" class="content-section">
-      <h2>Contact</h2>
-      <p>Get in touch via email or LinkedIn to discuss opportunities.</p>
-    </div>
+    <div class="content-section" id="about">About content here</div>
+    <div class="content-section" id="experience">Experience content here</div>
+    <div class="content-section" id="projects">Projects content here</div>
+    <div class="content-section" id="contact">Contact content here</div>
   </div>
 </section>
 
+
+
   </main>
 <script src="script.js"></script>
+
+
 
 </body>
 </html>

@@ -64,8 +64,8 @@ body {
 }
 
 .profile-info h1 {
-  font-size: 3.5rem;
   color: #444;
+  font-size: 3.5rem; /* large screens default */
 }
 
 
@@ -193,9 +193,18 @@ body {
 }
 
 /* === About Section === */
+
 main {
-  max-width: 800px;
-  margin: 30px auto;
+  max-width: 1200px;     
+  width: 90%;          
+  margin: 30px auto;      
+  padding: 0 25px;         
+  box-sizing: border-box;  
+}
+
+/* section#about {
+  max-width: 1000px;
+  margin: 0 auto 30px auto;  
   padding: 0 20px;
 }
 
@@ -207,30 +216,58 @@ section#about h2 {
 section#about p {
   color: #555;
   line-height: 1.6;
-}
+} */
 
 
-/* ________________________ */
-
-
-/* === Timeline Layout === */
+/* === Timeline Section === */
 .timeline-section {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 40px;
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 0 20px;
+  max-width: 1200px;   
+  width: 90%;          
+  margin: 60px auto;   
+  padding: 0 25px;     
 }
 
-/* Vertical Line */
-.timeline {
+
+/* === Labels Column === */
+.timeline-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 43px;
+}
+
+.timeline-label {
+  font-size: 0.9rem;
+  color: #666;
+  opacity: 0.7;
+  text-align: right;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+.timeline-label.active {
+  color: #222;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.timeline-label:hover {
+  opacity: 1;
+  color: #333;
+  cursor: pointer;
+}
+
+/* === Line + Dots Column === */
+.timeline-line-container {
   position: relative;
-  width: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 40px;
+  width: 40px;
 }
 
 .timeline-line {
@@ -241,44 +278,29 @@ section#about p {
   background-color: #ccc;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
-/* Timeline Dots */
-.timeline-item {
-  position: relative;
-  z-index: 2;
-  margin: 30px 0;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.timeline-item:hover {
-  transform: scale(1.1);
-}
-
-.timeline-item .dot {
-  display: block;
+.timeline-dot {
   width: 18px;
   height: 18px;
-  background-color: #e0e0e0;
   border-radius: 50%;
+  background-color: #e0e0e0;
   box-shadow: inset 1px 1px 3px rgba(0,0,0,0.15),
               inset -1px -1px 3px rgba(255,255,255,0.8);
+  z-index: 2;
+  cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.timeline-item.active .dot {
+.timeline-dot.active {
   background-color: #444;
   transform: scale(1.2);
 }
 
-/* Timeline Content */
+/* === Content Column === */
 .timeline-content {
   flex: 1;
-  background-color: #fff;
-  border-radius: 40px;
-  padding: 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .content-section {
@@ -287,6 +309,11 @@ section#about p {
 
 .content-section.active {
   display: block;
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
+              -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .timeline-content h2 {
@@ -300,16 +327,45 @@ section#about p {
 }
 
 /* === Responsive === */
-@media (max-width: 700px) {
+@media (max-width: 950px) {
+
+  main {  
+  width: 100%;          
+  margin: 0px auto;   
+  padding: 0 0px;         
+}
+
+/* section#about {
+  max-width: 800px;
+  margin: 0 auto 20px auto;  
+  padding: 0 60px;
+  text-align: center; 
+} */
+
   .timeline-section {
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
+    gap: 20px;
   }
 
-  .timeline {
+  .timeline-labels {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .timeline-label {
+    text-align: center;
+  }
+
+  .timeline-line-container {
     flex-direction: row;
     width: auto;
-    height: 80px;
+    height: 3px;
+    align-items: center;
+    gap: 60px;
   }
 
   .timeline-line {
@@ -320,11 +376,64 @@ section#about p {
     transform: translateY(-50%);
   }
 
-  .timeline-item {
-    margin: 0 20px;
+  .timeline-dot {
+    margin: 0;
   }
 
   .timeline-content {
-    margin-top: 30px;
+    margin-top: 20px;
+    width: 100%;
   }
 }
+
+@media (max-width: 400px) {
+
+  main {  
+    width: 100%;          
+    margin: 0 auto;   
+    padding: 0;         
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center children horizontally */
+  }
+
+  /* section#about {
+    max-width: 800px;
+    margin: 0 auto 10px auto;  
+    padding: 0 20px;
+    text-align: center;       
+  } */
+
+  /* Adjust space between timeline line and about section */
+  .timeline-section {
+    margin-top: 20px; /* control vertical spacing */
+  }
+
+  /* Hide labels */
+  .timeline-labels {
+    display: none;
+  }
+
+  /* Reduce dot size */
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Reduce gap between dots */
+  .timeline-line-container {
+    gap: 20px; /* smaller gap than default */
+  }
+
+  /* Optional: adjust line height for shorter layout */
+  .timeline-line {
+    top: 0;
+    bottom: 0; /* keep full height of container */
+  }
+
+  /* Content padding */
+  .content-section {
+    padding: 20px;
+  }
+}
+
