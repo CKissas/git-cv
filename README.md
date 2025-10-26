@@ -3,7 +3,6 @@
 This repository contains the source code for my **personal CV website**, built to showcase my professional background, skills, and projects in a clean, responsive layout.
 
 🌐 **Live Demo:** [https://ckissas.github.io/git-cv/](https://ckissas.github.io/git-cv/)
-*(Replace with your actual GitHub Pages link)*
 
 ---
 
