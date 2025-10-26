@@ -28,7 +28,7 @@ body {
 .top-card {
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 30px 5vw;
 }
 
 .card {
@@ -37,7 +37,7 @@ body {
   background-color: #fff;
   border-radius: 80px;
   max-width: 1200px;
-  width: 90%;
+  width: 100%;
   padding: 25px;
   align-items: center;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
@@ -132,10 +132,12 @@ body {
 
 /* === Responsive: Tablet / Small Screens (<700px) === */
 @media (max-width: 730px) {
+  
   .card {
     flex-direction: column;        
     align-items: center;           
-    padding: 20px;
+    /* padding: 20px; */
+    padding: 30px 5vw;
   }
 
   .profile-photo {
@@ -167,7 +169,7 @@ body {
     align-items: center;          /* vertical center */
     transform: none;              /* remove desktop translateY */
     margin-top: 0px;
-    gap: 20px;
+    gap: 40px;
   }
 
   .social-links a {
@@ -177,6 +179,14 @@ body {
 
 /* === Responsive: Extra Small Screens (<400px) === */
 @media (max-width: 400px) {
+  
+  .card {
+    flex-direction: column;        
+    align-items: center;           
+    /* padding: 20px; */
+    padding: 30px 5vw;
+  }
+  
   .profile-photo img {
     width: 100px;
     height: 100px;
@@ -191,7 +201,7 @@ body {
   }
 
   .social-links {
-    gap: 5px; /* smaller spacing between icons */
+    gap: 15px; /* smaller spacing between icons */
   }
 
   .social-links a {
@@ -209,9 +219,9 @@ body {
 
 main {
   max-width: 1200px;     
-  width: 90%;          
-  margin: 30px auto;      
-  padding: 0 25px;         
+  width: 100%;          
+  margin: 0px auto;      
+  padding: 0 0;         
   box-sizing: border-box;  
 }
 
@@ -435,7 +445,7 @@ section#about p {
 
   /* Reduce gap between dots */
   .timeline-line-container {
-    gap: 20px; /* smaller gap than default */
+    gap: 40px; /* smaller gap than default */
   }
 
   /* Optional: adjust line height for shorter layout */
@@ -446,7 +456,7 @@ section#about p {
 
   /* Content padding */
   .content-section {
-    padding: 20px;
+    padding: 0px;
   }
 }
 
