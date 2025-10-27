@@ -488,6 +488,23 @@ main {
   margin: 2rem 0;
 }
 
+/* === ABOUT - IMAGE  _______________________________________________ === */
+
+.about-img {
+  display: flex; /* center the image */
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.about-img img {
+  max-width: 20%; /* responsive width */
+  height: auto; /* maintain aspect ratio */
+  display: block; /* remove inline gap */
+  border-radius: 1rem; /* optional: soft rounded edges */
+}
+
 /*__*/
 /*__*/
 /*__*/
