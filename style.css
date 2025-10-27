@@ -1,3 +1,24 @@
+/* === SCROLLBAR _______________________________________________ === */
+
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+/* Optional: make scrollbars look nicer */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.158);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 /* === BACKGROUND _______________________________________________ === */
 
 * {
@@ -276,11 +297,6 @@ main {
   .timeline-label {
     text-align: center;
   }
-}
-
-html {
-  overflow-y: scroll;
-  scrollbar-gutter: stable;
 }
 
 /* === TIMELINE - LINE _______________________________________________ === */
