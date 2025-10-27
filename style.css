@@ -179,56 +179,49 @@ body {
   }
 }
 
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-/*__*/
-
-/* === About Section ______________________________________________________________________________________________________ === */
+/* === TIMELINE - MAIN _______________________________________________ === */
 
 main {
-  max-width: 1200px;
+  max-width: 12000px;
   width: 100%;
-  margin: 0px auto;
-  padding: 0 0;
+  margin: 0 auto;
+  padding: 0;
   box-sizing: border-box;
 }
 
-.timeline-section {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1200px;
-  width: 90%;
-  margin: 60px auto;
-  padding: 0 25px;
+@media (max-width: 400px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
+/* === TIMELINE - LABELS _______________________________________________ === */
 
 .timeline-labels {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 43px;
+  gap: 2.6em;
 }
+
+@media (max-width: 950px) {
+  .timeline-labels {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  }
+}
+
+@media (max-width: 400px) {
+  .timeline-labels {
+    display: none;
+  }
+}
+
+/* === TIMELINE - LABEL _______________________________________________ === */
 
 .timeline-label {
   font-size: 0.9rem;
@@ -248,6 +241,74 @@ main {
   opacity: 1;
   color: #333;
   cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .timeline-label {
+    text-align: center;
+  }
+}
+
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+
+.timeline-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 60px auto;
+  padding: 0 25px;
+}
+
+@media (max-width: 950px) {
+  .timeline-section {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .timeline-section {
+    margin-top: 20px;
+  }
+}
+
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
+    -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .timeline-line-container {
@@ -291,19 +352,6 @@ main {
   flex: 1;
 }
 
-.content-section {
-  display: none;
-}
-
-.content-section.active {
-  display: block;
-  background-color: #fff;
-  border-radius: 40px;
-  padding: 30px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
-    -2px -2px 5px rgba(255, 255, 255, 0.7);
-}
-
 .timeline-content h2 {
   color: #444;
   margin-bottom: 10px;
@@ -315,30 +363,6 @@ main {
 }
 
 @media (max-width: 950px) {
-  main {
-    width: 100%;
-    margin: 0px auto;
-    padding: 0 0px;
-  }
-
-  .timeline-section {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    gap: 20px;
-  }
-
-  .timeline-labels {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .timeline-label {
-    text-align: center;
-  }
-
   .timeline-line-container {
     flex-direction: row;
     width: auto;
@@ -366,23 +390,6 @@ main {
 }
 
 @media (max-width: 400px) {
-  main {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .timeline-section {
-    margin-top: 20px;
-  }
-
-  .timeline-labels {
-    display: none;
-  }
-
   .timeline-dot {
     width: 14px;
     height: 14px;
