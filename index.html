@@ -1,78 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chris Kissas CV</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chris Kissas CV</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="top-card">
+      <div class="card">
+        <div class="profile-photo">
+          <img src="etc/img/img1.png" alt="Chris Kissas" />
+        </div>
 
+        <div class="profile-info">
+          <h1>Chris Kissas</h1>
+          <p class="title">Application Engineer</p>
+        </div>
 
-<section class="top-card">
-  <div class="card">
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/christoforos-kissas/"
+            ><img src="etc/img/linkedin.png" alt="LinkedIn"
+          /></a>
+          <a
+            href="mailto:xristoforoskissas@gmail.com?subject=Hello%20Chris!&body=I%20found%20your%20portfolio%20online!"
+            ><img src="etc/img/email.png" alt="Email"
+          /></a>
+          <a href="https://github.com/CKissas"
+            ><img src="etc/img/github.png" alt="GitHub"
+          /></a>
+        </div>
+      </div>
+    </section>
 
-    <div class="profile-photo">
-      <img src="etc/img/img1.png" alt="Chris Kissas">
-    </div>
+    <main>
+      <section class="timeline-section">
+        <!-- Labels -->
+        <div class="timeline-labels">
+          <div class="timeline-label">About</div>
+          <div class="timeline-label">Experience</div>
+          <div class="timeline-label">Projects</div>
+          <div class="timeline-label">Contact</div>
+        </div>
 
-    <div class="profile-info">
-      <h1>Chris Kissas</h1>
-      <p class="title">Application Engineer</p>
-    </div>
+        <!-- Line + Dots -->
+        <div class="timeline-line-container">
+          <div class="timeline-line"></div>
+          <div class="timeline-dot" data-section="about"></div>
+          <div class="timeline-dot" data-section="experience"></div>
+          <div class="timeline-dot" data-section="projects"></div>
+          <div class="timeline-dot" data-section="contact"></div>
+        </div>
 
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/christoforos-kissas/"><img src="etc/img/linkedin.png" alt="LinkedIn"></a>
-      <a href="mailto:xristoforoskissas@gmail.com?subject=Hello%20Chris!&body=I%20found%20your%20portfolio%20online!"><img src="etc/img/email.png" alt="Email"></a>
-      <a href="https://github.com/CKissas"><img src="etc/img/github.png" alt="GitHub"></a>
-    </div>
-  </div>
-</section>
-
-
-
-  <main>
-    <!-- <section id="about">
-      <h2>About Me</h2>
-      <p>Hello World!</p>
-    </section> -->
-
-    <section class="timeline-section">
-  <!-- Labels -->
-  <div class="timeline-labels">
-    <div class="timeline-label">About</div>
-    <div class="timeline-label">Experience</div>
-    <div class="timeline-label">Projects</div>
-    <div class="timeline-label">Contact</div>
-  </div>
-
-  <!-- Line + Dots -->
-  <div class="timeline-line-container">
-    <div class="timeline-line"></div>
-    <div class="timeline-dot" data-section="about"></div>
-    <div class="timeline-dot" data-section="experience"></div>
-    <div class="timeline-dot" data-section="projects"></div>
-    <div class="timeline-dot" data-section="contact"></div>
-  </div>
-
-  <!-- Content -->
-  <div class="timeline-content">
-    <div class="content-section" id="about"></div>
-    <div class="content-section" id="experience"></div>
-    <div class="content-section" id="projects"></div>
-    <div class="content-section" id="contact"></div>
-  </div>
-</section>
-
-
-
-  </main>
-<script src="script.js"></script>
-
-
-
-</body>
-<footer class="footer">
-  Updated 2025
-</footer>
+        <!-- Content -->
+        <div class="timeline-content">
+          <div class="content-section" id="about"></div>
+          <div class="content-section" id="experience"></div>
+          <div class="content-section" id="projects"></div>
+          <div class="content-section" id="contact"></div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+  <footer class="footer">Updated 2025</footer>
 </html>

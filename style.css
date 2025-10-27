@@ -1,17 +1,39 @@
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
   width: 100%;
   text-align: center;
   padding: 25px 0;
-  color: #666;   
-  font-size: 0.9rem;
-  z-index: -1;  
-  pointer-events: none; 
+  color: #666;
+  font-size: clamp(12px, 2vw, 18px);
+  z-index: -1;
+  pointer-events: none;
 }
 
-/* === Basic Reset === */
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+/*__*/
+
+/* === PROFILE CARD _______________________________________________ === */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +41,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #f0f0f0;
   color: #333;
 }
@@ -33,7 +55,7 @@ body {
 
 .card {
   display: flex;
-  position: relative;         
+  position: relative;
   background-color: #fff;
   border-radius: 80px;
   max-width: 1200px;
@@ -41,15 +63,18 @@ body {
   padding: 25px;
   align-items: center;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
-              -2px -2px 5px rgba(255, 255, 255, 0.7);
-
+    -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
-
-.social-links { order: 1; }
-.profile-photo { order: 2; }
-.profile-info { order: 3; }
-
+.social-links {
+  order: 1;
+}
+.profile-photo {
+  order: 2;
+}
+.profile-info {
+  order: 3;
+}
 
 .profile-photo {
   flex: 0 0 auto;
@@ -67,13 +92,12 @@ body {
   border: 2px solid #ccc;
 }
 
-
 .profile-info {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   margin-left: 20px;
-  flex: 1; 
+  flex: 1;
 }
 
 .profile-info h1 {
@@ -81,9 +105,8 @@ body {
   font-size: 3.5rem; /* large screens default */
 }
 
-
 .profile-info .title {
-  font-size: 1.4rem;   /* large screen size */
+  font-size: 1.4rem; /* large screen size */
   color: #666;
   margin-top: 5px;
   letter-spacing: 1px;
@@ -96,8 +119,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around; /* spread icons vertically */
-  align-items: flex-start;       /* left-aligned baseline */
-  height: 90%;                  /* fill card height */
+  align-items: flex-start; /* left-aligned baseline */
+  height: 90%; /* fill card height */
   transform: translateY(-50%);
 }
 
@@ -111,13 +134,19 @@ body {
   justify-content: center;
   transition: transform 0.2s, background-color 0.2s;
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
-              inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 @media (min-width: 731px) {
-  .social-links a:nth-child(1) { margin-left: 25px; } /* top right */
-  .social-links a:nth-child(2) { margin-left: 0; }   /* middle left */
-  .social-links a:nth-child(3) { margin-left: 25px; } /* bottom right */
+  .social-links a:nth-child(1) {
+    margin-left: 25px;
+  } /* top right */
+  .social-links a:nth-child(2) {
+    margin-left: 0;
+  } /* middle left */
+  .social-links a:nth-child(3) {
+    margin-left: 25px;
+  } /* bottom right */
 }
 .social-links a:hover {
   transform: scale(1.2);
@@ -132,20 +161,19 @@ body {
 
 /* === Responsive: Tablet / Small Screens (<700px) === */
 @media (max-width: 730px) {
-  
   .card {
-    flex-direction: column;        
-    align-items: center;           
+    flex-direction: column;
+    align-items: center;
     /* padding: 20px; */
     padding: 30px 5vw;
   }
 
   .profile-photo {
-    margin-bottom: 15px;  
-    margin-left: 0;         
-    flex: 0 0 auto;                
+    margin-bottom: 15px;
+    margin-left: 0;
+    flex: 0 0 auto;
   }
-  
+
   .profile-info h1 {
     font-size: 2.4rem;
   }
@@ -155,38 +183,36 @@ body {
   }
 
   .profile-info {
-    margin-left: 0;                
-    text-align: center;           
-    margin-bottom: 10px;           
+    margin-left: 0;
+    text-align: center;
+    margin-bottom: 10px;
   }
-
 
   .social-links {
     order: 4;
-    position: static;             /* normal flow under title */
-    flex-direction: row;          /* horizontal row */
-    justify-content: center;      /* center horizontally */
-    align-items: center;          /* vertical center */
-    transform: none;              /* remove desktop translateY */
+    position: static; /* normal flow under title */
+    flex-direction: row; /* horizontal row */
+    justify-content: center; /* center horizontally */
+    align-items: center; /* vertical center */
+    transform: none; /* remove desktop translateY */
     margin-top: 0px;
     gap: 40px;
   }
 
   .social-links a {
-    margin-left: 0 !important;    /* reset any desktop offsets */
+    margin-left: 0 !important; /* reset any desktop offsets */
   }
 }
 
 /* === Responsive: Extra Small Screens (<400px) === */
 @media (max-width: 400px) {
-  
   .card {
-    flex-direction: column;        
-    align-items: center;           
+    flex-direction: column;
+    align-items: center;
     /* padding: 20px; */
     padding: 30px 5vw;
   }
-  
+
   .profile-photo img {
     width: 100px;
     height: 100px;
@@ -215,14 +241,14 @@ body {
   }
 }
 
-/* === About Section === */
+/* === About Section ______________________________________________________________________________________________________ === */
 
 main {
-  max-width: 1200px;     
-  width: 100%;          
-  margin: 0px auto;      
-  padding: 0 0;         
-  box-sizing: border-box;  
+  max-width: 1200px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0 0;
+  box-sizing: border-box;
 }
 
 /* section#about {
@@ -241,19 +267,17 @@ section#about p {
   line-height: 1.6;
 } */
 
-
 /* === Timeline Section === */
 .timeline-section {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 40px;
-  max-width: 1200px;   
-  width: 90%;          
-  margin: 60px auto;   
-  padding: 0 25px;     
+  max-width: 1200px;
+  width: 90%;
+  margin: 60px auto;
+  padding: 0 25px;
 }
-
 
 /* === Labels Column === */
 .timeline-labels {
@@ -309,8 +333,8 @@ section#about p {
   height: 18px;
   border-radius: 50%;
   background-color: #e0e0e0;
-  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.15),
-              inset -1px -1px 3px rgba(255,255,255,0.8);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.15),
+    inset -1px -1px 3px rgba(255, 255, 255, 0.8);
   z-index: 2;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
@@ -336,7 +360,7 @@ section#about p {
   border-radius: 40px;
   padding: 30px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
-              -2px -2px 5px rgba(255, 255, 255, 0.7);
+    -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .timeline-content h2 {
@@ -351,14 +375,13 @@ section#about p {
 
 /* === Responsive === */
 @media (max-width: 950px) {
+  main {
+    width: 100%;
+    margin: 0px auto;
+    padding: 0 0px;
+  }
 
-  main {  
-  width: 100%;          
-  margin: 0px auto;   
-  padding: 0 0px;         
-}
-
-/* section#about {
+  /* section#about {
   max-width: 800px;
   margin: 0 auto 20px auto;  
   padding: 0 60px;
@@ -410,11 +433,10 @@ section#about p {
 }
 
 @media (max-width: 400px) {
-
-  main {  
-    width: 100%;          
-    margin: 0 auto;   
-    padding: 0;         
+  main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center; /* center children horizontally */
@@ -482,8 +504,8 @@ section#about p {
 
 .about-text p {
   font-size: 1.2rem; /* increase from default 1rem */
-  line-height: 1.6;  /* keeps it readable */
-  color: #555;       /* optional: keep consistent with other text */
+  line-height: 1.6; /* keeps it readable */
+  color: #555; /* optional: keep consistent with other text */
 }
 
 /* Responsive scaling */
@@ -521,8 +543,8 @@ section#about p {
 
 .contact-text p {
   font-size: 1.2rem; /* increase from default 1rem */
-  line-height: 1.6;  /* keeps it readable */
-  color: #555;       /* optional: keep consistent with other text */
+  line-height: 1.6; /* keeps it readable */
+  color: #555; /* optional: keep consistent with other text */
 }
 
 /* Responsive scaling */
@@ -544,7 +566,7 @@ section#about p {
   border-radius: 30px;
   padding: 30px;
   margin-bottom: 40px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .experience-item h5 {
@@ -625,7 +647,6 @@ section#about p {
   }
 }
 
-
 /*______________________*/
 
 .projects-text h2 {
@@ -648,8 +669,8 @@ section#about p {
 
 .projects-text p {
   font-size: 1.2rem; /* increase from default 1rem */
-  line-height: 1.6;  /* keeps it readable */
-  color: #555;       /* optional: keep consistent with other text */
+  line-height: 1.6; /* keeps it readable */
+  color: #555; /* optional: keep consistent with other text */
 }
 
 /* Responsive scaling */
