@@ -349,6 +349,38 @@ main {
   }
 }
 
+/* === TIMELINE - DOTS  _______________________________________________ === */
+
+.timeline-dot {
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.15),
+    inset -1px -1px 3px rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.timeline-dot.active {
+  background-color: #444;
+  transform: scale(1.2);
+}
+
+@media (max-width: 950px) {
+  .timeline-dot {
+    margin: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .timeline-dot {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
 /*__*/
 /*__*/
 /*__*/
@@ -385,23 +417,6 @@ main {
     -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
-.timeline-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background-color: #e0e0e0;
-  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.15),
-    inset -1px -1px 3px rgba(255, 255, 255, 0.8);
-  z-index: 2;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.timeline-dot.active {
-  background-color: #444;
-  transform: scale(1.2);
-}
-
 .timeline-content {
   flex: 1;
 }
@@ -417,10 +432,6 @@ main {
 }
 
 @media (max-width: 950px) {
-  .timeline-dot {
-    margin: 0;
-  }
-
   .timeline-content {
     margin-top: 20px;
     width: 100%;
@@ -428,11 +439,6 @@ main {
 }
 
 @media (max-width: 400px) {
-  .timeline-dot {
-    width: 14px;
-    height: 14px;
-  }
-
   .content-section {
     padding: 0px;
   }
