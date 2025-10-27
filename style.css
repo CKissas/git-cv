@@ -1,3 +1,19 @@
+/* === BACKGROUND _______________________________________________ === */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* === FOOTER _______________________________________________ === */
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -9,6 +25,39 @@
   z-index: -1;
   pointer-events: none;
 }
+
+/* === PHOTO _______________________________________________ === */
+
+.card__profile-photo {
+  order: 2;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 70px;
+}
+
+.card__profile-photo img {
+  width: clamp(80px, 15vw, 130px);
+  height: clamp(80px, 15vw, 130px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+@media (max-width: 730px) {
+  .card__profile-photo {
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+}
+
+/* @media (max-width: 400px) {
+  .profile-photo img {
+    width: 80px;
+    height: 80px;
+  }
+} */
 
 /*__*/
 /*__*/
@@ -34,19 +83,8 @@
 /*__*/
 
 /* === PROFILE CARD _______________________________________________ === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
-}
-
-/* === Top Card Section === */
+/*Checked!*/
 .top-card {
   display: flex;
   justify-content: center;
@@ -69,27 +107,9 @@ body {
 .social-links {
   order: 1;
 }
-.profile-photo {
-  order: 2;
-}
+
 .profile-info {
   order: 3;
-}
-
-.profile-photo {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 70px;
-}
-
-.profile-photo img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ccc;
 }
 
 .profile-info {
@@ -168,12 +188,6 @@ body {
     padding: 30px 5vw;
   }
 
-  .profile-photo {
-    margin-bottom: 15px;
-    margin-left: 0;
-    flex: 0 0 auto;
-  }
-
   .profile-info h1 {
     font-size: 2.4rem;
   }
@@ -211,11 +225,6 @@ body {
     align-items: center;
     /* padding: 20px; */
     padding: 30px 5vw;
-  }
-
-  .profile-photo img {
-    width: 100px;
-    height: 100px;
   }
 
   .profile-info h1 {
